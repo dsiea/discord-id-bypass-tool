@@ -1,2 +1,93 @@
-# discord-id-bypass-tool
-A verified tool that works on any potato computer that will let you bypass discord verification
+<p align="center">
+  <img src="assets/logo.png" width="180" alt="PromptPirate" />
+</p>
+
+<h1 align="center">☠ Discord ID Bypass Tool</h1>
+
+<p align="center">
+  <strong>by <a href="https://github.com/PromptPirate">PromptPirate</a></strong><br/>
+  <em>Real-time 3D avatar head & mouth controller with gamepad + keyboard support</em>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Three.js-r128-black?logo=threedotjs" />
+  <img src="https://img.shields.io/badge/VRM-supported-orange" />
+  <img src="https://img.shields.io/badge/FBX-supported-purple" />
+  <img src="https://img.shields.io/badge/GLB-supported-blue" />
+  <img src="https://img.shields.io/badge/license-MIT-green" />
+</p>
+
+---
+
+## What is this?
+
+A browser-based tool that lets you control a 3D rigged avatar's head and mouth in real-time using a gamepad (DualSense, Xbox, etc.) or keyboard. Perfect for VTubing setups, game dev prototyping, or live avatar puppeteering.
+
+### Features
+
+- **Multi-format support** — VRM, FBX (with textures via ZIP or folder drop), GLB/GLTF
+- **Automatic bone detection** — finds Head, Neck, Jaw bones by name or VRM humanoid API
+- **Morph target tester** — preview every blend shape with sliders, map the right mouth shape to your controller
+- **Mouth overdrive** — push morph targets beyond 100% for exaggerated expressions
+- **Gamepad + keyboard** — left stick / arrows for head, RT / Space for mouth
+- **Orbit camera** — right-click drag to orbit, scroll to zoom, quick-focus buttons
+- **Zero install** — single HTML file, runs in any modern browser
+
+## Quick Start
+
+1. Open `index.html` in your browser
+2. Load a rigged model (VRM, FBX, GLB)
+3. Bones auto-detect — adjust in dropdowns if needed
+4. Use the **Morph Tester** to find and map the right mouth shape
+5. Control with gamepad or keyboard
+
+## Controls
+
+| Action | Keyboard | Gamepad |
+|--------|----------|---------|
+| Head Yaw | ← → | L-Stick X |
+| Head Pitch | ↑ ↓ | L-Stick Y |
+| Head Roll | Q / E | R-Stick X |
+| Mouth Open | Space | RT |
+| Reset | R | Y Button |
+
+## Loading FBX with Textures
+
+FBX files often have textures in a separate folder. Three ways to handle this:
+
+1. **ZIP** — bundle the FBX + texture files into a `.zip` and load it directly
+2. **Drag & drop folder** — drag the entire model folder onto the drop zone
+3. **Multi-select** — click "select FBX + texture files together" and shift-click all files
+
+## Where to Get Models
+
+| Source | Format | Notes |
+|--------|--------|-------|
+| [VRoid Hub](https://hub.vroid.com) | VRM | Free downloads, instant bone setup |
+| [VRoid Studio](https://vroid.com/en/studio) | VRM | Make your own avatar |
+| [Mixamo](https://mixamo.com) | FBX | Free auto-rigged characters |
+| [ReadyPlayer.Me](https://readyplayer.me) | GLB | Custom avatars |
+| [Sketchfab](https://sketchfab.com) | GLB/FBX | Search for "rigged" models |
+
+## Demo Model
+
+A demo model is included at `assets/demo-model.zip` — load it to test the tool immediately.
+
+## Tech Stack
+
+- [Three.js](https://threejs.org/) r128
+- [@pixiv/three-vrm](https://github.com/pixiv/three-vrm) 0.6.11
+- [JSZip](https://stuk.github.io/jszip/) 3.10.1
+- [fflate](https://github.com/101arrowz/fflate) 0.6.9
+
+All dependencies loaded from CDN. No build step required.
+
+## License
+
+MIT — do whatever you want with it.
+
+---
+
+<p align="center">
+  <sub>☠ Made with love by <a href="https://github.com/PromptPirate">PromptPirate</a></sub>
+</p>
