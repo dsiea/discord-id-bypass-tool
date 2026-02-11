@@ -74,8 +74,7 @@ FBX files often have textures in a separate folder. Three ways to handle this:
 |--------|--------|-------|
 | [VRoid Hub](https://hub.vroid.com) | VRM | Free downloads, instant bone setup |
 | [VRoid Studio](https://vroid.com/en/studio) | VRM | Make your own avatar |
-| [Mixamo](https://mixamo.com) | FBX | Free auto-rigged characters |
-| [ReadyPlayer.Me](https://readyplayer.me) | GLB | Custom avatars |
+| [Mixamo](https://www.mixamo.com) | FBX | Free auto-rigged characters |
 | [Sketchfab](https://sketchfab.com) | GLB/FBX | Search for "rigged" models |
 
 ## Demo Model
