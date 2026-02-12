@@ -248,6 +248,24 @@ loadScript('https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFL
 
         loadScript('https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js',function(){
           console.log('[HC] Loaders ready — GLTF:',loadersReady.gltf,'FBX:',loadersReady.fbx,'VRM:',loadersReady.vrm,'JSZip:',!!window.JSZip);
+
+          // ─── AUTO-LOAD DEMO MODEL ───
+          setTimeout(async function () {
+              if (loadedModel) return; // уже что-то загружено — пропускаем
+
+              try {
+                  const response = await fetch('assets/demo-model.zip');
+                  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+                  const zipBlob = await response.blob();
+                  const zipFile = new File([zipBlob], "demo-model.zip", { type: "application/zip" });
+
+                  $('model-info').textContent = 'Auto-loading demo-model.zip...';
+                  loadZip(zipFile);
+              } catch (err) {
+                  showErr('Auto-load failed: ' + err.message + '\nCheck that assets/demo-model.zip exists and server allows access.');
+              }
+          }, 1800); // 1.8 секунды — чтобы точно подгрузились JSZip и остальные загрузчики
         });
       });
     });
