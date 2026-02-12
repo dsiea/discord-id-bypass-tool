@@ -560,22 +560,13 @@ function prepareScene(obj,fileName){
 
   $('model-info').textContent=fileName+' — '+allBones.length+' bones, '+allMorphs.length+' morphs';
 
-  // Auto-focus on head/face after model is loaded and prepared
-  setTimeout(function(){
+  // Auto-click "Focus Head" after model is loaded and processed
+  setTimeout(() => {
     if (loadedModel) {
-      if (A.head) {
-        var wp = new THREE.Vector3();
-        A.head.getWorldPosition(wp);
-        animCam(wp, 1.2, 900);
-      } else {
-        var b = new THREE.Box3().setFromObject(loadedModel);
-        var s = b.getSize(new THREE.Vector3());
-        var c = b.getCenter(new THREE.Vector3());
-        c.y = b.max.y - s.y * 0.12;
-        animCam(c, s.y * 0.7, 900);
-      }
+      const focusBtn = document.getElementById('cam-head');
+      if (focusBtn) focusBtn.click();
     }
-  }, 300);
+  }, 800);
 
   return true;
 }
